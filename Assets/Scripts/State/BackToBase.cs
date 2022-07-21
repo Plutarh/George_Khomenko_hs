@@ -43,6 +43,7 @@ public class BackToBase : State
     void FindBasePoint()
     {
         _basePoint = PointsHolder.BasePoint;
+        _basePoint.transform.localScale = Vector3.one * 0.4f;
     }
 
     float GetDistanceToPoint()
@@ -56,6 +57,7 @@ public class BackToBase : State
         end = true;
 
         character.navMeshAgent.isStopped = true;
+        _basePoint.transform.localScale = Vector3.one * 0.2f;
 
         character.ChangeState(_backToBaseScriptableState.nextState);
     }
