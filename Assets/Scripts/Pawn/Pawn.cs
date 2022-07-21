@@ -6,10 +6,12 @@ public class Pawn : MonoBehaviour, IDamagable
     public float Health => _health;
     [SerializeField] protected float _maxHealth;
     [SerializeField] protected float _health;
-
+    public bool IsDead => _isDead;
 
     public Action OnTakedDamage;
     public Action OnDeath;
+
+    private bool _isDead;
 
 
     public virtual void Awake()
@@ -43,6 +45,7 @@ public class Pawn : MonoBehaviour, IDamagable
 
     public virtual void Death()
     {
+        _isDead = true;
         OnDeath?.Invoke();
     }
 }

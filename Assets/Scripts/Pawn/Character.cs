@@ -37,6 +37,8 @@ public class Character : Pawn
 
     private void Update()
     {
+        if (IsDead) return;
+
         RunCurrentState();
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -55,6 +57,7 @@ public class Character : Pawn
     }
 
 
+
     public void ChangeState(ScriptableState newState)
     {
         if (_currentScriptableState == newState) return;
@@ -67,5 +70,11 @@ public class Character : Pawn
     {
         if (_currentState == null) return;
         _currentState.Run();
+    }
+
+    public override void Death()
+    {
+        base.Death();
+        if (_currentState != null) _currentState.End();
     }
 }
