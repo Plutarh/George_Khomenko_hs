@@ -14,6 +14,9 @@ public class Character : Pawn
     private State _currentState;
     private float _moveSpeed;
 
+    // Буду использвать синглтон, если будет больше юнитов, то уже взаимодействие будет через CharacterPicker
+    public static Character Instance;
+
     public enum EState
     {
         Idle,
@@ -28,6 +31,7 @@ public class Character : Pawn
         _moveSpeed = Config.Instance.characterMoveSpeed;
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.speed = _moveSpeed;
+        Instance = this;
     }
 
     private void Start()
@@ -60,8 +64,10 @@ public class Character : Pawn
 
     public void ChangeState(ScriptableState newState)
     {
+        if (IsDead) return;
         if (_currentScriptableState == newState) return;
         if (_currentState != null) _currentState.End();
+
         _currentScriptableState = newState;
         _currentState = _currentScriptableState.InitializeState(this);
     }

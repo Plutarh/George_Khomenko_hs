@@ -6,7 +6,6 @@ using UnityEngine;
 public class PointGenerator : MonoBehaviour
 {
     [SerializeField] private MeshFilter _ground;
-    [SerializeField] private List<Vector3> _corners = new List<Vector3>();
 
     [SerializeField] private List<Point> _points = new List<Point>();
     [SerializeField] private float _minDistanceBetweenPoints = 2;
@@ -23,7 +22,6 @@ public class PointGenerator : MonoBehaviour
     {
         ReadConfig();
         FindBoundsOnGround();
-        FindCornersOnGround();
         CreateBasePoint();
         CreatePatrollPoints();
     }
@@ -50,7 +48,7 @@ public class PointGenerator : MonoBehaviour
 
     void CreatePatrollPoints()
     {
-        // Кол-во попыток поиска точки
+        // Кол-во попыток поиска точки, как проверить свободное место в прямоугольнике не додумался =(
         int tryFindRandomAvaliablePointCount = 300;
 
         while (_points.Count < _maxPatrollPointsCount && tryFindRandomAvaliablePointCount > 0)
@@ -93,39 +91,6 @@ public class PointGenerator : MonoBehaviour
         }
 
         _groundBounds = _ground.sharedMesh.bounds;
-    }
-
-    // TODO возможно удалить корнеры
-    void FindCornersOnGround()
-    {
-        if (_groundBounds == null)
-        {
-            Debug.LogError("No bounds for ground");
-            return;
-        }
-
-        Vector3 leftBottomCorner = _ground.transform.TransformPoint(new Vector3(_groundBounds.min.x, _ground.transform.position.y, _groundBounds.min.z));
-        _corners.Add(leftBottomCorner);
-
-        Vector3 leftTopCorner = _ground.transform.TransformPoint(new Vector3(_groundBounds.min.x, _ground.transform.position.y, _groundBounds.max.z));
-        _corners.Add(leftTopCorner);
-
-        Vector3 rightTopCorner = _ground.transform.TransformPoint(new Vector3(_groundBounds.max.x, _ground.transform.position.y, _groundBounds.max.z));
-        _corners.Add(rightTopCorner);
-
-        Vector3 rightBottomCorner = _ground.transform.TransformPoint(new Vector3(_groundBounds.max.x, _ground.transform.position.y, _groundBounds.min.z));
-        _corners.Add(rightBottomCorner);
-    }
-
-
-
-    private void OnDrawGizmos()
-    {
-        if (_groundBounds == null) return;
-
-        Gizmos.color = Color.red;
-
-        _corners.ForEach(c => Gizmos.DrawSphere(c, 0.2f));
     }
 }
 

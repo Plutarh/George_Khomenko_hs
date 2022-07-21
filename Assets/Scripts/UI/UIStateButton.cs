@@ -16,6 +16,6 @@ public class UIStateButton : MonoBehaviour
 
     public void ExecuteState()
     {
-
+        Character.Instance.ChangeState(_state);
     }
 }
