@@ -9,10 +9,6 @@ public class UIStateButtonPanel : MonoBehaviour
     [SerializeField] private UIStateButton _btnPrefab;
     [SerializeField] private Transform _stateButtonParent;
 
-    private void Awake()
-    {
-        CreateStateButtons();
-    }
 
     public void CreateStateButtons()
     {

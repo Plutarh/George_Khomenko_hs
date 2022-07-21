@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 7356575705553273059}
   - component: {fileID: 8082872719150813477}
   - component: {fileID: 2131511034763471927}
+  - component: {fileID: 2900865426398501359}
   m_Layer: 0
   m_Name: CharacterHealthBar
   m_TagString: Untagged
@@ -151,6 +152,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 2.46
+--- !u!114 &2900865426398501359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647567429802199488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7edafcf480bd9134f8b35a1b21e1819f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthFillImage: {fileID: 1055036781910428247}
 --- !u!1 &2010760224451217394
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +178,6 @@ GameObject:
   - component: {fileID: 6535849586838253989}
   - component: {fileID: 483746870887567468}
   - component: {fileID: 3080455960636361483}
-  - component: {fileID: 8099820113763427722}
   m_Layer: 0
   m_Name: States_HorizontalGroup
   m_TagString: Untagged
@@ -269,24 +282,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 2
---- !u!114 &8099820113763427722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2010760224451217394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a3c10c9be9450f47907164c0b11995f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _statesToShow:
-  - {fileID: 11400000, guid: e9402639365ec2645a8cc95f1271352f, type: 2}
-  - {fileID: 11400000, guid: 677072e98fce8d14db9cb7a14fc55e4e, type: 2}
-  - {fileID: 11400000, guid: faf5544452154454d93e14e86e658498, type: 2}
-  _btnPrefab: {fileID: 665445002431936908, guid: 718daeae9ae218f40af88082d2b4fd92, type: 3}
-  _stateButtonParent: {fileID: 9150533431263571045}
 --- !u!1 &2921897273058995225
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,6 +685,7 @@ GameObject:
   - component: {fileID: 8073516802568740963}
   - component: {fileID: 4209832493448047650}
   - component: {fileID: 8736443566955095744}
+  - component: {fileID: 8963378897591779375}
   m_Layer: 0
   m_Name: StatesPanel
   m_TagString: Untagged
@@ -780,6 +776,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &8963378897591779375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5524588614244712468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a3c10c9be9450f47907164c0b11995f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _statesToShow:
+  - {fileID: 11400000, guid: e9402639365ec2645a8cc95f1271352f, type: 2}
+  - {fileID: 11400000, guid: 677072e98fce8d14db9cb7a14fc55e4e, type: 2}
+  - {fileID: 11400000, guid: faf5544452154454d93e14e86e658498, type: 2}
+  _btnPrefab: {fileID: 665445002431936908, guid: 718daeae9ae218f40af88082d2b4fd92, type: 3}
+  _stateButtonParent: {fileID: 9150533431263571045}
 --- !u!1 &5778255976208394737
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,6 +807,8 @@ GameObject:
   - component: {fileID: 6565224316606039461}
   - component: {fileID: 6318077404514377194}
   - component: {fileID: 2588908181661021446}
+  - component: {fileID: 3400953745705918421}
+  - component: {fileID: 8883681943292783329}
   m_Layer: 0
   m_Name: GameplayCanvas
   m_TagString: Untagged
@@ -895,3 +911,103 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6af4e17472b8818418021d9aea03bce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stateButtonPanel: {fileID: 8963378897591779375}
+  _healthBar: {fileID: 2900865426398501359}
+--- !u!225 &3400953745705918421
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5778255976208394737}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &8883681943292783329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5778255976208394737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69214245332b85d408b885fed0314574, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tween: {fileID: 893445212096925577}
+  animationType: 3
+  animator: {fileID: 0}
+  animatorController: {fileID: 0}
+  panelShowHoldTime: 0
+  updateType: 0
+  timeToTweenAction: 0.15
+  customShowStepsVector: []
+  OnShow:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2588908181661021446}
+        m_TargetAssemblyTypeName: UIGameplayCanvas, Assembly-CSharp
+        m_MethodName: OnShow
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHide:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2588908181661021446}
+        m_TargetAssemblyTypeName: UIGameplayCanvas, Assembly-CSharp
+        m_MethodName: OnHide
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnCallShow:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2588908181661021446}
+        m_TargetAssemblyTypeName: UIGameplayCanvas, Assembly-CSharp
+        m_MethodName: OnCallShow
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnCallHide:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2588908181661021446}
+        m_TargetAssemblyTypeName: UIGameplayCanvas, Assembly-CSharp
+        m_MethodName: OnCallHide
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHideWithShowNext:
+    m_PersistentCalls:
+      m_Calls: []
+  canOpenNextPanel: 0
+  canvasGroup: {fileID: 3400953745705918421}
+  delayHold: 0

@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Core : MonoBehaviour
 {
+    public static EGameState GameState => _gameState;
+    public static EPlayState PlayState => _playState;
+
     [SerializeField] private Config config;
 
-    private EPlayState _playState;
-    private EGameState _gameState;
+
+
+    static EPlayState _playState;
+    static EGameState _gameState;
 
     public static Core Instance;
 
