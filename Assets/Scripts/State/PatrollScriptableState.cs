@@ -7,6 +7,6 @@ public class PatrollScriptableState : ScriptableState
 
     public override State InitializeState(Character target)
     {
-        return new Patroll(target);
+        return new Patroll(this, target);
     }
 }

@@ -8,7 +8,7 @@ public class Patroll : State
     private float _breakDistance = 1.2f;
     private Point _currentPoint;
 
-    public Patroll(Character character) : base(character)
+    public Patroll(ScriptableState state, Character character) : base(state, character)
     {
         _patrollScriptableState = (PatrollScriptableState)scriptableState;
 
@@ -57,6 +57,12 @@ public class Patroll : State
 
     public override void End()
     {
+        if (end) return;
+        end = true;
+
+        if (_currentPoint != null)
+            _currentPoint.transform.localScale = Vector3.one * 0.2f;
+
         character.navMeshAgent.isStopped = true;
     }
 }

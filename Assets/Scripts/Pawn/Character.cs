@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -37,11 +38,27 @@ public class Character : Pawn
     private void Update()
     {
         RunCurrentState();
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            ChangeState(_allStates.FirstOrDefault(st => st is IdleScriptableState));
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ChangeState(_allStates.FirstOrDefault(st => st is PatrollScriptableState));
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            ChangeState(_allStates.FirstOrDefault(st => st is BackToBaseScriptableState));
+        }
     }
+
 
     public void ChangeState(ScriptableState newState)
     {
         if (_currentScriptableState == newState) return;
+        if (_currentState != null) _currentState.End();
         _currentScriptableState = newState;
         _currentState = _currentScriptableState.InitializeState(this);
     }

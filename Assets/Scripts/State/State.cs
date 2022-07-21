@@ -5,10 +5,12 @@ public abstract class State
     public ScriptableState scriptableState;
 
     public Character character;
+    public bool end;
 
-    public State(Character target)
+    public State(ScriptableState scriptable, Character target)
     {
         character = target;
+        scriptableState = scriptable;
     }
 
     public virtual void Initialize() { }

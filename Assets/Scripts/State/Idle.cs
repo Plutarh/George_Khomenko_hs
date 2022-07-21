@@ -12,7 +12,7 @@ public class Idle : State
     private Tween _idleTween;
     private Vector3 _startSize;
 
-    public Idle(Character character) : base(character)
+    public Idle(ScriptableState state, Character character) : base(state, character)
     {
         _idleScriptableState = (IdleScriptableState)scriptableState;
 
@@ -36,6 +36,7 @@ public class Idle : State
 
     public override void End()
     {
+
         _idleTween.Kill();
 
         character.transform.DOScale(_startSize, _scaleTime);

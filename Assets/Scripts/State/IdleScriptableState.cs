@@ -7,6 +7,6 @@ public class IdleScriptableState : ScriptableState
     public float scaleMultiplier;
     public override State InitializeState(Character target)
     {
-        return new Idle(target);
+        return new Idle(this, target);
     }
 }
