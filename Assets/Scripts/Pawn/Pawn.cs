@@ -4,12 +4,13 @@ using UnityEngine;
 public class Pawn : MonoBehaviour, IDamagable
 {
     public float Health => _health;
-    [SerializeField] private float _maxHealth;
-    [SerializeField] private float _health;
+    [SerializeField] protected float _maxHealth;
+    [SerializeField] protected float _health;
 
 
     public Action OnTakedDamage;
     public Action OnDeath;
+
 
     public virtual void Awake()
     {

@@ -167,11 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ground: {fileID: 0}
-  _corners:
-  - {x: -6.6450224, y: 0, z: -13.708121}
-  - {x: -6.6450224, y: 0, z: 13.808122}
-  - {x: 5.3650227, y: 0, z: 13.808122}
-  - {x: 5.3650227, y: 0, z: -13.708121}
+  _corners: []
   _points: []
   _minDistanceBetweenPoints: 1
   _maxPatrollPointsCount: 20

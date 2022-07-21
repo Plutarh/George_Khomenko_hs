@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bd1d4a21723f174caf8da6dea690dd5, type: 3}
-  m_Name: Idle
+  m_Script: {fileID: 11500000, guid: a4c7dc36845e50147a17cf4e5d5fbfb8, type: 3}
+  m_Name: Patroll
   m_EditorClassIdentifier: 
-  stateName: Idle
-  scaleTime: 1
-  scaleMultiplier: 1.2
+  stateName: Patroll
+  moveSpeed: 5

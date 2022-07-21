@@ -1,14 +1,26 @@
 using DG.Tweening;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "State/Idle State")]
+
 public class Idle : State
 {
-    [SerializeField] private float _scaleTime;
-    [SerializeField] private float _scaleMultiplier;
+    private float _scaleTime;
+    private float _scaleMultiplier;
 
-    Tween _idleTween;
-    Vector3 _startSize;
+    private IdleScriptableState _idleScriptableState;
+
+    private Tween _idleTween;
+    private Vector3 _startSize;
+
+    public Idle(Character character) : base(character)
+    {
+        _idleScriptableState = (IdleScriptableState)scriptableState;
+
+        _scaleTime = _idleScriptableState.scaleTime;
+        _scaleMultiplier = _idleScriptableState.scaleMultiplier;
+
+        Initialize();
+    }
 
     public override void Initialize()
     {

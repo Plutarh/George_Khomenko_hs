@@ -8,6 +8,10 @@ public class CharacterInstaller : MonoBehaviour
 
     public void Initialize()
     {
+        for (int i = 0; i < 3; i++)
+        {
+
+        }
         SpawnCharacter(PointsHolder.BasePoint.transform);
     }
 

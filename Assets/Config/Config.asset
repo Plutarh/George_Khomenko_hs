@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxPatrollPointsCount: 20
   minDistanceBetweenPoints: 1.5
+  characterMoveSpeed: 4
+  characterMaxHealth: 100
