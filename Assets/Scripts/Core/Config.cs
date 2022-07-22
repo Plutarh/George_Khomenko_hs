@@ -10,4 +10,5 @@ public class Config : ScriptableObject
     public float characterMoveSpeed;
     public float characterMaxHealth;
     public static Config Instance;
+    public float damage;
 }

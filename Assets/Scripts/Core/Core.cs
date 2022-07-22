@@ -62,7 +62,6 @@ public class Core : MonoBehaviour
 
         _gameState = newState;
 
-        Debug.Log("Change state to " + _gameState);
         GlobalEvents.OnGameStateChanged?.Invoke(_gameState);
     }
 

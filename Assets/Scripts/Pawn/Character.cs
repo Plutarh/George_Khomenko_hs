@@ -47,17 +47,9 @@ public class Character : Pawn
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            ChangeState(_allStates.FirstOrDefault(st => st is IdleScriptableState));
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            ChangeState(_allStates.FirstOrDefault(st => st is PatrollScriptableState));
+            TakeDamage(10);
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            ChangeState(_allStates.FirstOrDefault(st => st is BackToBaseScriptableState));
-        }
     }
 
 

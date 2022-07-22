@@ -17,7 +17,4 @@ public class SceneContext : MonoBehaviour
         _pointGenerator.Initialize();
         _characterInstaller.Initialize();
     }
-
-
-
 }

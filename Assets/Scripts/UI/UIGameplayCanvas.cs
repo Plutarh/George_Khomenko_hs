@@ -35,6 +35,7 @@ public class UIGameplayCanvas : MonoBehaviour
         }
     }
 #endif
+
     private void Awake()
     {
         GlobalEvents.OnCharacterSpawned += CreateHealthBar;
@@ -42,7 +43,6 @@ public class UIGameplayCanvas : MonoBehaviour
 
     public void OnCallShow()
     {
-
         _stateButtonPanel.CreateStateButtons();
     }
 

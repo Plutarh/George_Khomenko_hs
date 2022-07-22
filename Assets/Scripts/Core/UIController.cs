@@ -16,14 +16,20 @@ public class UIController : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        CheckFirstScene();
+
         GlobalEvents.OnNewSceneLoaded += OnNewSceneLoaded;
+    }
+
+    private void Start()
+    {
+        CheckFirstScene();
     }
 
     // Специально, чтобы можно было играть с любой сцены и октрывался нужный UI
     void CheckFirstScene()
     {
         DisableAllPanels();
+
         if (SceneManager.GetActiveScene().name == "Game")
         {
             _loadingPanel.Hide();
@@ -49,7 +55,6 @@ public class UIController : MonoBehaviour
                 _menuPanel.QuickShow();
                 break;
         }
-
     }
 
     public void ShowLoadingPanel()
@@ -67,6 +72,8 @@ public class UIController : MonoBehaviour
         yield return new WaitForSecondsRealtime(delay);
         action?.Invoke();
     }
+
+
 
     void DisableAllPanels()
     {
