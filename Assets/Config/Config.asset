@@ -16,3 +16,4 @@ MonoBehaviour:
   minDistanceBetweenPoints: 1.5
   characterMoveSpeed: 4
   characterMaxHealth: 100
+  damage: 20
