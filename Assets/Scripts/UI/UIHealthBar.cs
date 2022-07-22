@@ -13,6 +13,12 @@ public class UIHealthBar : MonoBehaviour
     {
         _pawn = pawn;
         _pawn.OnTakedDamage += RefreshBar;
+        ResetBar();
+    }
+
+    void ResetBar()
+    {
+        _healthFillImage.fillAmount = _pawn.GetHealth01();
     }
 
     void RefreshBar()

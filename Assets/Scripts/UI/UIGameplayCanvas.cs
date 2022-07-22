@@ -66,11 +66,11 @@ public class UIGameplayCanvas : MonoBehaviour
 
     }
 
-
     public void BackToMenuScene()
     {
-
+        Core.Instance.LoadMenuScene();
     }
+
     private void OnDestroy()
     {
         GlobalEvents.OnCharacterSpawned -= CreateHealthBar;

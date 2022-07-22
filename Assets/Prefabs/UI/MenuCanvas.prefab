@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69214245332b85d408b885fed0314574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tween: {fileID: 3719193807191725464}
+  tween: {fileID: 6419505789371803529}
   animationType: 3
   animator: {fileID: 0}
   animatorController: {fileID: 0}

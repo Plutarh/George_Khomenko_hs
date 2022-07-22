@@ -9,7 +9,6 @@ public class SceneContext : MonoBehaviour
 
     private void Awake()
     {
-        InitializeCore();
         InitializeModules();
     }
 
@@ -19,11 +18,6 @@ public class SceneContext : MonoBehaviour
         _characterInstaller.Initialize();
     }
 
-    // Для того, чтобы можно было играть сразу со сцены Game
-    void InitializeCore()
-    {
-        if (Core.Instance == null)
-            Core.Initialize();
-    }
+
 
 }

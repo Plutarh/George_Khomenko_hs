@@ -9,14 +9,22 @@ public class UIStateButtonPanel : MonoBehaviour
     [SerializeField] private UIStateButton _btnPrefab;
     [SerializeField] private Transform _stateButtonParent;
 
+    private List<UIStateButton> _stateButtons = new List<UIStateButton>();
 
     public void CreateStateButtons()
     {
+        if (_stateButtons.Count > 0)
+        {
+            _stateButtons.ForEach(sb => Destroy(sb.gameObject));
+            _stateButtons.Clear();
+        }
+
         foreach (var state in _statesToShow)
         {
             var createdBtn = Instantiate(_btnPrefab, _stateButtonParent);
 
             createdBtn.SetState(state);
+            _stateButtons.Add(createdBtn);
         }
     }
 }

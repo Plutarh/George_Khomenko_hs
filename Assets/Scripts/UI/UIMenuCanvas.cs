@@ -7,6 +7,6 @@ public class UIMenuCanvas : MonoBehaviour
 {
     public void LoadGame()
     {
-        SceneManager.LoadScene("Game");
+        Core.Instance.LoadGameScene();
     }
 }

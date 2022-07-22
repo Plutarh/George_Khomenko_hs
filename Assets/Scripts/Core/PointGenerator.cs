@@ -92,6 +92,11 @@ public class PointGenerator : MonoBehaviour
 
         _groundBounds = _ground.sharedMesh.bounds;
     }
+
+    private void OnDestroy()
+    {
+        PointsHolder.allPoints.Clear();
+    }
 }
 
 public enum EPointType

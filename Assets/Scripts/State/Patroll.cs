@@ -5,7 +5,7 @@ public class Patroll : State
 {
     private float _moveSpeed;
     private PatrollScriptableState _patrollScriptableState;
-    private float _breakDistance = 1.2f;
+    private float _breakDistance = 1.5f;
     private Point _currentPoint;
 
     public Patroll(ScriptableState state, Character character) : base(state, character)
