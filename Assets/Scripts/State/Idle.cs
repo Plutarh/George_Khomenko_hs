@@ -10,7 +10,7 @@ public class Idle : State
     private IdleScriptableState _idleScriptableState;
 
     private Tween _idleTween;
-    private Vector3 _startSize;
+    private Vector3 _startSize = Vector3.one;
 
     public Idle(ScriptableState state, Character character) : base(state, character)
     {
@@ -26,9 +26,9 @@ public class Idle : State
     {
         base.Initialize();
 
-        _startSize = character.transform.localScale;
-        _idleTween = character.transform.DOScale(_startSize * _scaleMultiplier, _scaleTime).SetLoops(-1, LoopType.Yoyo);
+        _idleTween = character.transform.DOScale(_startSize * _scaleMultiplier, _scaleTime).OnComplete(() => character.transform.DOScale(_startSize, _scaleTime)).SetLoops(-1, LoopType.Yoyo);
     }
+
     public override void Run()
     {
 
@@ -36,7 +36,6 @@ public class Idle : State
 
     public override void End()
     {
-
         _idleTween.Kill();
 
         character.transform.DOScale(_startSize, _scaleTime);

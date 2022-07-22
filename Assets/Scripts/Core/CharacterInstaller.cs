@@ -15,6 +15,8 @@ public class CharacterInstaller : MonoBehaviour
     {
         Vector3 spawnPosition = spawnPoint.position + new Vector3(0, _characterPrefab.transform.localScale.y, 0);
         characterInstance = Instantiate(_characterPrefab, spawnPosition, spawnPoint.rotation);
+
+        GlobalEvents.OnCharacterSpawned?.Invoke(characterInstance);
     }
 }
 

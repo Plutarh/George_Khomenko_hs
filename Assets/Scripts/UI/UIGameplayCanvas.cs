@@ -35,11 +35,20 @@ public class UIGameplayCanvas : MonoBehaviour
         }
     }
 #endif
+    private void Awake()
+    {
+        GlobalEvents.OnCharacterSpawned += CreateHealthBar;
+    }
 
     public void OnCallShow()
     {
-        _healthBar.SetPawn(Character.Instance);
+
         _stateButtonPanel.CreateStateButtons();
+    }
+
+    void CreateHealthBar(Character character)
+    {
+        _healthBar.SetPawn(Character.Instance);
     }
 
     public void OnCallHide()
@@ -62,6 +71,9 @@ public class UIGameplayCanvas : MonoBehaviour
     {
 
     }
-
+    private void OnDestroy()
+    {
+        GlobalEvents.OnCharacterSpawned -= CreateHealthBar;
+    }
 
 }
